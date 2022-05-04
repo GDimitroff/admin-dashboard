@@ -30,12 +30,13 @@ body {
   font-weight: 300;
   display: flex;
   flex-direction: column;
+  user-select: none;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   gap: 3px;
   color: var(--primary-light);
 }
@@ -50,4 +51,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.sidebar-nav li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 1.6rem 2rem;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+
+.sidebar-nav li:last-child {
+  padding-bottom: 2rem;
+}
+
+.sidebar-nav .active,
+.sidebar-nav li:hover {
+  background-color: #94a3b8bb;
+  border-left: 4px solid var(--primary-orange);
+  color: var(--primary-light);
 }
