@@ -140,6 +140,36 @@ h1 {
 .info-cards {
   grid-column: 1 / -1;
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.info-card {
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.info-card:hover {
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+}
+
+.info-card > :first-child {
+  font-size: 1.6rem;
+  color: var(--secondary-light);
+  padding-bottom: 2rem;
+}
+
+.info-card:hover > :first-child {
+  color: var(--primary-orange);
+}
+
+.info-card > :last-child {
+  font-size: 2.8rem;
+  font-weight: 700;
 }
