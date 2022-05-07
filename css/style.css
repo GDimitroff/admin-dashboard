@@ -23,6 +23,21 @@ body {
   color: var(--primary-dark);
 }
 
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto auto 1fr auto;
+  row-gap: 2rem;
+  padding: 3rem;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.4rem;
+}
+
 .sidebar {
   width: 70px;
   color: var(--secondary-light);
@@ -33,6 +48,7 @@ body {
   user-select: none;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
+  flex-shrink: 0;
 }
 
 .sidebar * {
@@ -85,4 +101,45 @@ body {
   background-color: #94a3b8bb;
   border-left: 4px solid var(--primary-orange);
   color: var(--primary-light);
+}
+
+.header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.4rem;
+}
+
+.user > .icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-right: 2px solid var(--secondary-light);
+  padding-right: 16px;
+  color: var(--secondary-light);
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+}
+
+.user-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.info-cards {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
