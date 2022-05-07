@@ -25,10 +25,9 @@ body {
 
 main {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: auto auto 1fr auto;
-  row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   padding: 3rem;
 }
 
@@ -142,7 +141,6 @@ h1 {
   display: grid;
   gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  margin-top: 1rem;
   cursor: pointer;
 }
 
@@ -152,24 +150,93 @@ h1 {
   border-radius: 4px;
   padding: 2rem 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.2s ease-in-out;
 }
 
 .info-card:hover {
   color: var(--primary-orange);
   border: 2px solid var(--primary-orange);
+  transition: 0.2s ease-in-out;
 }
 
 .info-card > :first-child {
   font-size: 1.6rem;
   color: var(--secondary-light);
   padding-bottom: 2rem;
+  transition: 0.2s ease-in-out;
 }
 
 .info-card:hover > :first-child {
   color: var(--primary-orange);
+  transition: 0.2s ease-in-out;
 }
 
 .info-card > :last-child {
   font-size: 2.8rem;
   font-weight: 700;
+}
+
+.stats-container {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.stats {
+  grid-column: span 3;
+  position: relative;
+}
+
+.year {
+  color: #fff;
+  background-color: var(--primary-orange);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+}
+
+.chart img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.data-container {
+  background-color: var(--primary-orange);
+  color: var(--primary-dark);
+  grid-column: 4 / 6;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.data-item {
+  position: relative;
+  text-align: center;
+}
+
+.data-item > :first-child {
+  font-size: 1.6rem;
+  padding-bottom: 0.6rem;
+  color: var(--primary-light);
+}
+
+.data-item > :last-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.data-item::after {
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translate(50%, -50%);
+  content: '';
+  width: 30%;
+  height: 2px;
+  background-color: var(--primary-light);
 }
