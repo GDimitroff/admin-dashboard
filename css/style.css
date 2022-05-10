@@ -320,7 +320,7 @@ main {
   position: absolute;
   top: -6px;
   right: -6px;
-  content: '\267A';
+  content: '\2756';
   width: 32px;
   height: 32px;
   display: flex;
@@ -330,4 +330,63 @@ main {
   background-color: green;
   box-shadow: rgba(0, 0, 0, 0.46) 0px 1px 4px;
   font-size: 1.8rem;
+}
+
+.featured {
+  grid-row: 4;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 38px;
+  margin-bottom: 4rem;
+}
+
+.lg-card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 4px;
+  padding: 3rem;
+}
+
+.card-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-header > h2 {
+  font-size: 1.8rem;
+}
+
+.card-header > a:link,
+.card-header > a:visited {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--primary-orange);
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-header > a:hover,
+.card-header > a:active {
+  text-decoration: underline;
+}
+
+.card-header ~ div {
+  font-size: 1.4rem;
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header ~ div:not(:last-child) {
+  border-bottom: 1px solid var(--secondary-light);
+}
+
+.lg-card div > p:last-child {
+  color: var(--secondary-light);
+}
+
+.rating {
+  color: var(--primary-orange);
 }
