@@ -131,7 +131,6 @@ main {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  cursor: pointer;
 }
 
 .info-card {
@@ -144,6 +143,7 @@ main {
   padding: 2rem 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .info-card:hover {
@@ -172,34 +172,30 @@ main {
 .stats-container {
   grid-row: 3;
   grid-column: 1 / -1;
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  margin: 2rem 0;
-  padding: 0.6rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 4rem 0;
+  border-bottom: 5px solid var(--primary-orange);
   border-radius: 4px;
   overflow: hidden;
+  background-color: var(--primary-light);
 }
 
 .stats {
-  position: relative;
-  grid-column: span 2;
-  background-color: var(--primary-orange);
-  color: var(--primary-dark);
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
 }
 
 .year {
-  background-color: var(--primary-light);
-  padding: 0.4rem;
-  border-radius: 4px;
+  color: #fff;
+  background-color: var(--primary-orange);
+  padding: 3rem;
 }
 
 .data-items {
-  height: 100%;
+  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -208,18 +204,10 @@ main {
   text-align: center;
 }
 
-.data-item > :first-child:after {
-  display: block;
-  content: '';
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-}
-
 .data-item > :first-child {
-  font-size: 1.6rem;
-  padding-bottom: 1rem;
-  color: #fff;
+  color: var(--secondary-light);
+  font-size: 1.4rem;
+  padding-bottom: 0.6rem;
 }
 
 .data-item > :last-child {
@@ -227,13 +215,26 @@ main {
   font-weight: 700;
 }
 
-.book {
-  border-radius: 4px;
-  border-bottom: 5px solid var(--primary-orange);
+.data-item > :first-child:after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary-light);
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 38px;
+  padding: 2rem;
+}
+
+.book-img {
   overflow: hidden;
 }
 
-.book img {
+.book-img img {
   display: block;
   width: 100%;
   height: 100%;
@@ -241,6 +242,6 @@ main {
   transition: all 0.4s;
 }
 
-.book img:hover {
+.book-img img:hover {
   transform: scale(1.1);
 }
