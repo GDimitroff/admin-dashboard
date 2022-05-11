@@ -31,6 +31,19 @@ main {
   padding: 0 4rem;
 }
 
+.mobile-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-btn > div {
+  width: 25px;
+  height: 2px;
+  background: var(--primary-dark);
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -196,6 +209,7 @@ main {
 .data-items {
   flex: 1;
   display: flex;
+  gap: 18px;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -425,6 +439,14 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .header {
+    grid-template-columns: 32px 1fr 1fr;
+  }
+
+  .mobile-btn {
+    display: block;
+  }
+
   .sidebar {
     display: none;
   }
@@ -458,8 +480,9 @@ main {
     padding: 0rem 3rem;
   }
 
-  .header {
-    grid-template-columns: repeat(2, 1fr);
+  .data-items {
+    padding: 2rem;
+    flex-wrap: wrap;
   }
 
   .book-img img {
@@ -472,6 +495,10 @@ main {
 
   .user > .icons {
     display: none;
+  }
+
+  .lg-card:first-child div p:first-child {
+    flex-shrink: 1;
   }
 
   .lg-card div > div {
